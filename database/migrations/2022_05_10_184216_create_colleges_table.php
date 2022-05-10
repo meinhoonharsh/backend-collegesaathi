@@ -14,7 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('colleges', function (Blueprint $table) {
+            // name, city, state, zip code, active
             $table->id();
+            $table->string('name')->nullable();
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('zip_code')->nullable();
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }
