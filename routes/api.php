@@ -24,6 +24,7 @@ use App\Http\Controllers\AuthController;
   
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
+Route::post('googleauth', [AuthController::class, 'googleauth']);
      
 Route::middleware("auth:api")->group(function () {
     Route::post('/route', function (Request $request) {
