@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,6 @@ Route::post('login', [AuthController::class, 'login']);
 Route::post('googleauth', [AuthController::class, 'googleauth']);
      
 Route::middleware("auth:api")->group(function () {
-    Route::post('/route', function (Request $request) {
-        return ["Hifsfsf"];
-    });
+    Route::get('/profile', [ProfileController::class, 'getProfile']);
+    Route::post('/profile', [ProfileController::class, 'updateProfile']);
 });
