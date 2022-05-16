@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('department')->nullable();
             $table->json('images')->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->integer('role')->default(1);
             $table->string('google_id')->nullable();
             $table->rememberToken();
